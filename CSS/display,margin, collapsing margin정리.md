@@ -19,7 +19,7 @@
 
 - inline 과 block의 특성을 혼합
 - inline 처럼 줄바꿈 없이 배치되지만, width, height 설정 가능
-- 위 아래 margin 과 padding 적용 가능
+- 위 아래 margin 과 padding 적용 가능하다.
 
 ---
 
