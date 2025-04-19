@@ -1,7 +1,7 @@
 📌 TIL: Next.js에서 params와 props의 차이 – 자동 전달 vs 직접 전달 개념 정리
 ===
 
-### ✅ 개념 요약
+### 개념 요약
 
 Next.js에서는 URL 경로에 있는 동적 세그먼트 값(예: `/movies/[id]`)을
 
@@ -20,7 +20,7 @@ Next.js에서는 URL 경로에 있는 동적 세그먼트 값(예: `/movies/[id]
 
 ---
 
-### ✅ 예시 1: 라우트 파일 (자동 전달)
+### 예시 1: 라우트 파일 (자동 전달)
 
 ```tsx
 
@@ -40,7 +40,7 @@ export default function MovieDetailPage({ params: { id } }: { params: { id: stri
 
 ---
 
-### ✅ 예시 2: 일반 컴포넌트 (props로 직접 전달해야 함)
+### 예시 2: 일반 컴포넌트 (props로 직접 전달해야 함)
 
 ```tsx
 
@@ -72,7 +72,7 @@ export default function MovieVideos({ id }: { id: string }) {
 
 ---
 
-### ✅ 왜 이렇게 돼야 하냐?
+### 왜 이렇게 돼야 하냐?
 
 - Next.js는 **라우팅 파일만 특별하게 다뤄줘** (`params`, `searchParams`, `generateMetadata` 등)
 - 그 외의 컴포넌트는 **개발자가 만든 일반적인 React 컴포넌트**이기 때문에,
@@ -90,7 +90,7 @@ export default function MovieVideos({ id }: { id: string }) {
 
 ---
 
-### ✅ 실전에서 자주 하는 실수
+### 실전에서 자주 하는 실수
 
 ```tsx
 
