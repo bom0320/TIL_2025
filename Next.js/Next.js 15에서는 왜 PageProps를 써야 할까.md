@@ -1,7 +1,7 @@
 Next.js 15에서는 왜 PageProps를 써야 할까
 ===
 
-## ✅ `PageProps`란?
+## `PageProps`란?
 
 ### 👉 정의:
 
@@ -72,7 +72,7 @@ Type 'IParams' does not satisfy the constraint 'PageProps'
 
 ---
 
-## ✅ 그래서 개선된 방식: `PageProps`
+## 그래서 개선된 방식: `PageProps`
 
 ```tsx
 
