@@ -6,7 +6,7 @@ TIL - Controlled vs Uncontrolled Component in React
 ### 🔹 Controlled Component (제어 컴포넌트)
 
 - **React의 상태(state)가 input 값을 제어하는 방식**.
-- 입력값이 `useState` 같은 hook에 의해 관리됨.
+- 입력값이 `useState` 같은 hook에 의해 관리된다.
 - 즉, 사용자가 입력한 값이 컴포넌트의 상태로 저장되고, 이 상태를 기반으로 `input` 요소의 value가 바뀐다.
 - 대표 예:
     
