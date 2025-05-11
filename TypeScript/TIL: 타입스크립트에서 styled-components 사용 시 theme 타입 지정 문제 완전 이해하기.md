@@ -3,9 +3,9 @@ TIL: 타입스크립트에서 styled-components 사용 시 theme 타입 지정 �
 
 ## ✨ 문제 상황
 
-- 리액트 프로젝트에 타입스크립트를 추가하고 styled-components를 썼다.
-- `ThemeProvider`를 사용해서 `theme={darkTheme}`처럼 테마 객체를 넘겼다.
-- 그런데 `props.theme.textColor` 같은 부분에서 타입스크립트 에러가 발생했다.
+- 리액트 프로젝트에 타입스크립트를 추가하고 styled-components를 썼음
+- `ThemeProvider`를 사용해서 `theme={darkTheme}`처럼 테마 객체를 넘김
+- 그런데 `props.theme.textColor` 같은 부분에서 타입스크립트 에러가 발생
 
 ```
 Property 'textColor' does not exist on type 'DefaultTheme'
