@@ -1,6 +1,6 @@
 request.nextURL 속성과 역할 정리
 ===
-Next.js의 `middleware` 또는 `Edge API Routes`에서 사용하는 `request.nextUrl`은 `URL`클래스의 인스턴스이며, 다양한 URL 관련 정보를 추출할 수 있다.
+Next.js의 `middleware` 또는 `Edge API Routes`에서 사용하는 `request.nextUrl`은 `URL`클래스의 인스턴스이며, 다양한 URL 관련 정보를 추출할 수 있었다.
 
 ## ✅ 주요 속성과 설명
 
@@ -28,6 +28,6 @@ request.nextUrl.searchParams.get('state') // "xyz"
 ```
 
 ## 핵심 요약
-- `request.nextUrl` 은 요청 URL 을 구조화해서 쉽게 다룰 수 있도록 해주는 객체
-- 속성들은 각각 URL 일부 정보만 분리해서 접근 가능하게 해줌
-- 특히 OAuth 콜백 처리나 라우팅 제어 시 매우 유용하게 사용됨
+- `request.nextUrl` 은 요청 URL 을 구조화해서 쉽게 다룰 수 있도록 해주는 객체이다.
+- 속성들은 각각 URL 일부 정보만 분리해서 접근 가능하게 해준다.
+- 특히 OAuth 콜백 처리나 라우팅 제어 시 매우 유용하게 사용된다.
