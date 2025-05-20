@@ -110,10 +110,3 @@ newItems.splice(1, 0, 'C');
 | 3️⃣ `.splice(destination.index, 0, item)` | 새로운 위치에 끼워 넣기 |
 | 4️⃣ `setItems()` | 상태 업데이트로 화면 반영 |
 
----
-
-필요하면 이 내용 `TIL/ReactDnD.md`나 `TIL/useState-drag-drop.md` 같은 파일로 정리해도 좋아!
-
-이거 복붙해서 저장해놔도 되고, 필요할 때마다 다시 불러달라고 해도 돼 😄
-
-다음엔 `splice`만 연습할 수 있는 연습 예제도 만들 수 있어!
