@@ -29,8 +29,8 @@ OAuth 인증 흐름 정리 (with Google OAuth)
 
 ## 🔍 `code`의 의미
 - 이 `code`는 "사용자가 로그인했고, 정보 제공도 허락했다." 는 임시 티켓 같은 것
-- 사용자 정보가 직접 담긴 건 아님
-- 이걸 통해 다음 단계인 access token 요청이 가능해짐
+- 사용자 정보가 직접 담긴 건 아니다.
+- 이걸 통해 다음 단계인 access token 요청이 가능해진다.
 
 ```ts
 const code = request.nextUrl.searchParams.get('code');
