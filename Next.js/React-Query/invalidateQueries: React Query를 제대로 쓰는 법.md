@@ -123,4 +123,4 @@ queryClient.setQueryData(["memberList"], (old) => {
 ## 요약 한 줄
 
 React Query를 쓴다면, 데이터를 다시 가져올 땐 refresh + setState 대신 invalidateQueries를 써라.
-그래야 캐시, 상태, 컴포넌트가 하나로 연결된다.
+그래야 캐시, 상태, 컴포넌트가 하나로 연결된다.ㅇ
