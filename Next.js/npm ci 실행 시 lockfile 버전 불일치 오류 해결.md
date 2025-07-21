@@ -52,10 +52,10 @@ Error: Process completed with exit code 1
 
 ### ✨ **배운 점**
 
-✅ `npm ci`는 lockfile과 package.json이 불일치하면 설치를 거부한다.
+- `npm ci`는 lockfile과 package.json이 불일치하면 설치를 거부한다.
 
-✅ lockfile 문제 발생 시 **`package-lock.json` 삭제 후 `npm install`**로 재생성하면 해결 가능하다.
+- lockfile 문제 발생 시 **`package-lock.json` 삭제 후 `npm install`**로 재생성하면 해결 가능하다.
 
-✅ 이런 수정은 기능 변경이 아닌 빌드 환경 정리에 해당하므로 커밋 메시지는 `chore`로 작성한다.
+- 이런 수정은 기능 변경이 아닌 빌드 환경 정리에 해당하므로 커밋 메시지는 `chore`로 작성한다.
 
 예) `chore: regenerate package-lock.json`
