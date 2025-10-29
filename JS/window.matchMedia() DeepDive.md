@@ -233,3 +233,36 @@ handleMotionChange(prefersReduceMotion);
 ### 마치며
 
 `window.matchMedia()` 는 단순히 미디어 쿼리 확인을 넘어, 웹 페이지가 사용자의 환경 변화에 더욱 똑똑하고 유연하게 반응하도록 돕는 강력한 도구이다. 우리가 다음 반응형 웹 프로젝트에 `matchMedia()` 를 적극적으로 활용하여 사용자 경험을 한 단계 업그레이드해보도록 하자.
+
+## + Example Code_React Hooks
+
+### useMatchMedia.jsx
+
+```js
+import { useState, useEffect } from "react";
+
+const useMatchMedia = (query) => {
+  const [matches, setMatches] = useState(window.matchMedia(query).matches);
+
+  // 상태 업데이트 함수
+  const handleChange = (event) => {
+    setMatches(event.matches);
+  };
+
+  useEffect(() => {
+    const mediaQueryList = window.matchMedia(query);
+
+    // 미디어 쿼리 변화 감지
+    mediaQueryList.addEventListener("change", (e) => handleChange(e));
+
+    // 클린 업
+    return () => {
+      mediaQueryList.removeEventListener("change", (e) => handleChange(e));
+    };
+  }, [query]);
+
+  return matches;
+};
+
+export default useMatchMedia;
+```
