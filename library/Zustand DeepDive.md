@@ -129,3 +129,79 @@ export default function 컴포넌트() {
 }
 // 이는 권장하지 않는 방법임
 ```
+
+간단한 예제를 살펴보도록 하자.
+
+기본적으로 프로젝트의 `store` 폴더에서 각 스토어를 생성한다.
+
+타입 스크립트를 사용할 때는, `create` 함수의 제네릭(타입을 외부에서 지정할 수 있는 문법)으로 상태(State)와 액션(Aciton) 타입을 전달한다.
+
+```tsx
+create<타입>();
+```
+
+```tsx
+// /src/store/count.ts
+
+import { create } from "zustand";
+
+export const useCountStore = create<{
+  count: number;
+  increase: () => void;
+  decrease: () => void;
+}>((set, get) => ({
+  count: 1,
+  increase: () => {
+    const { count } = get();
+    set({ count: count + 1 });
+  },
+  decrese: () => {
+    const { count } = get();
+    set({ count: count - 1 });
+  },
+}));
+// 이는 카운트를 관리하는 스토어
+```
+
+get 함수를 사용하지 않고, set 함수의 콜백을 사용하면 더 간결하게 상태를 변경할 수 있다.
+
+```tsx
+import { create } from "zustand";
+
+export const useCounterStore = create<{
+	count: number
+	increase: () => void
+	decrease: () => void
+}>((set) => ({
+	count: 1,
+	increase: () => set((state) => ({ count: state.count + 1 }));
+	// ⭐️ JS에서 {}는 객체를 의미하니까 항상 key:value 구조여야 한다.
+	// Zustand의 set()도 객체를 받으니까...({count:state.count+1}) 처럼 써야함
+	decrease: () => set((state) => ({ count: state.count - 1 }));
+}));
+```
+
+> “이걸 지금 실행할 거야? 나중에 실행할 거야?”
+
+- “지금”이면 괄호 붙이고 `set(...)`
+- “나중에”면 괄호 빼고 `() => set(...)`
+
+그리고 생성한 스토어를 다음곽 같이 컴포넌트에서 사용할 수 있다.
+
+```tsx
+import { useCountStore } = from './store/count';
+
+export default function App() {
+	const count = useCountStore(state => state.count)
+	const increase = useCountStore(state => state.increase);
+	const decrease = useCountStore(state => state.decrease);
+
+	return (
+		<>
+			<h2>{count}</h2>
+			<button onClick={increase}>+</button>
+			<button onClick={decrease}>-</button>
+		</>
+	)
+}
+```
